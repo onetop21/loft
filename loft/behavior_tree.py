@@ -16,7 +16,7 @@ class Node:
         if name: self.name = name
 
     @abstractmethod
-    def doAction(self):
+    def doAction(self, blackboard):
         pass
 
     @property
@@ -26,6 +26,20 @@ class Node:
     @name.setter
     def name(self, name: str):
         self._name = name
+
+# Function
+class Function(Node):
+    def __init__(self, name=None):
+        super().__init__(name)
+        self._nodes = []
+    
+    def doAction(self, blackboard):
+        pass
+
+    # decorator
+    def __call__(self):
+        pass
+
 
 # Composite
 class Composite(Node):
